@@ -27,5 +27,14 @@ namespace Analytik_Altfragengenerator.Models
             return Double.Parse(_tempReturnString);
         }
 
+        public string ShortenString(string _toShorten, int _desiredLength)
+        {
+            string _tempString = "";
+            for(int i = 0; i < _desiredLength; i++)
+            {
+                _tempString += _toShorten[i];
+            }
+            return _tempString;
+        }
     }
 }

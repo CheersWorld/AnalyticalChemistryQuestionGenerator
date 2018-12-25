@@ -14,3 +14,19 @@ C:\Users\Leo\source\repos\Analytik Altfragengenerator\Analytik Altfragengenerato
 C:\Users\Leo\source\repos\Analytik Altfragengenerator\Analytik Altfragengenerator\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Leo\source\repos\Analytik Altfragengenerator\Analytik Altfragengenerator\obj\Debug\Views\QuestionWindow.g.cs
 C:\Users\Leo\source\repos\Analytik Altfragengenerator\Analytik Altfragengenerator\obj\Debug\Views\QuestionWindow.baml
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\bin\Debug\Analytik Altfragengenerator.exe.config
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\bin\Debug\Analytik Altfragengenerator.exe
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\bin\Debug\Analytik Altfragengenerator.pdb
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator.csprojAssemblyReference.cache
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Views\QuestionWindow.g.cs
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\App.g.cs
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator_MarkupCompile.cache
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator_MarkupCompile.lref
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Views\QuestionWindow.baml
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator.g.resources
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik_Altfragengenerator.Properties.Resources.resources
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator.csproj.GenerateResource.cache
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator.csproj.CoreCompileInputs.cache
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator.exe
+C:\Users\Leo\Documents\Git\Analytical Chemistry Question Generator\AnalyticalChemistryQuestionGenerator\obj\Debug\Analytik Altfragengenerator.pdb

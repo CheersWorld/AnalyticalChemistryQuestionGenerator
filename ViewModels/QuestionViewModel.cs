@@ -49,6 +49,17 @@ namespace Analytik_Altfragengenerator.ViewModels
             }
         }
 
+        private DeviationQuestion _deviationQuestion;
+        public DeviationQuestion DeviationQuestion
+        {
+            get { return _deviationQuestion; }
+            set
+            {
+                _deviationQuestion = value;
+                this.OnPropertyChanged();
+            }
+        }
+
         private string _displayString;
         public string DisplayString
         {
@@ -71,33 +82,33 @@ namespace Analytik_Altfragengenerator.ViewModels
             CheckCommand = new RelayCommand(o => GetSolution());
             StatisticsQuestion = new StatisticsQuestion();
             TitrationQuestion = new TitrationQuestion();
-            SetQuestionParameters();
+            DeviationQuestion = new DeviationQuestion();
+            StatisticsQuestion.Initialize();
+            GenerateQuestion();
         }
 
         public void GenerateQuestion()
         {
             //You'll either get a question about Titrations, or about statistics.
-            if(((Random.NextDouble() * 2).ToString()[0].ToString()) != "0") {
+            switch((Random.NextDouble() * 3).ToString()[0].ToString()) {
+                case "0":
                 TitrationQuestion.GenerateQuestion();
                 DisplayString = TitrationQuestion.QuestionContent;
                 SolutionMethodDelegate = TitrationQuestion.GetSolution;
-            } else
-            {
-                StatisticsQuestion.GenerateQuestion();
-                DisplayString = StatisticsQuestion.QuestionContent;
-                SolutionMethodDelegate = StatisticsQuestion.GetSolution;
-            }
-
-        }
-
-        public void SetQuestionParameters()
-        {
-            //An inelegant design decision early on in the process of coding this makes this code necessary. I intended for this to be stored in an XML file, however that would break the scope of this project
-            StatisticsQuestion.RandomParameterCount = 5;
-            StatisticsQuestion.RandomParamterBaseValue = 200;
-            StatisticsQuestion.BaseValueDeviation = 5;
-            StatisticsQuestion.RandomParameterBaseValueMoifier = 10;
-            StatisticsQuestion.GenerateQuestion();
+                    break;
+                case "1":
+                    StatisticsQuestion.GenerateQuestion();
+                    DisplayString = StatisticsQuestion.QuestionContent;
+                    SolutionMethodDelegate = StatisticsQuestion.GetSolution;
+                    break;
+                case "2":
+                    DeviationQuestion.GenerateQuestion();
+                    DisplayString = DeviationQuestion.QuestionContent;
+                    SolutionMethodDelegate = DeviationQuestion.GetSolution;
+                    break;
+                default:
+                    break;
+            } 
         }
         public void GetSolution() {
             MessageBox.Show(SolutionMethodDelegate());

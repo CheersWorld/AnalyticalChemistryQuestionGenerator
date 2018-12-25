@@ -19,15 +19,25 @@ namespace Analytik_Altfragengenerator.Models
 
         public virtual string GetSolution()
         {
+            
+            return "Der Mittelwert ist: " + ShortenString(GetMean().ToString(), 5) + "\r\nDie Standardabweichung ist: " + ShortenString(GetStandardDeviation().ToString(), 5);
+        }
 
-            double _tempMean = RandomValues.Sum() / RandomValues.Length;
+        //Stanard devation as a method is required for DevationQuestion. 
+        public double GetStandardDeviation()
+        {
             double _tempSum = 0;
             for (int i = 0; i < RandomValues.Length; i++)
             {
-                _tempSum += (RandomValues[i] - _tempMean) * (RandomValues[i] - _tempMean);
+                _tempSum += (RandomValues[i] - GetMean()) * (RandomValues[i] - GetMean());
             }
-            _tempSum = _tempSum / (RandomValues.Length - 1);
-            return "Der Mittelwert ist: " + _tempSum + "\r\nDie Standardabweichung ist: " + Math.Sqrt(_tempSum);
+            return Math.Sqrt(_tempSum / (RandomValues.Length - 1));
+        }
+
+        //Access to the mean value is required for DevationQuestion
+        public double GetMean()
+        {
+            return RandomValues.Sum() / RandomValues.Length;
         }
 
         public virtual void GenerateQuestion()
@@ -42,6 +52,16 @@ namespace Analytik_Altfragengenerator.Models
                 QuestionContent =QuestionContent + _generatedValues[i] + "\r\n";
             }
             RandomValues = _generatedValues;
+        }
+
+        public void Initialize()
+        {
+            //An inelegant design decision early on in the process of coding this makes this code necessary. I intended for this to be stored in an XML file, however that would break the scope of this project
+            RandomParameterCount = 5;
+            RandomParamterBaseValue = 200;
+            BaseValueDeviation = 5;
+            RandomParameterBaseValueMoifier = 10;
+            GenerateQuestion();
         }
     }
 }
