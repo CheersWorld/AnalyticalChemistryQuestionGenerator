@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Analytik_Altfragengenerator.Models;
 using Analytik_Altfragengenerator.ViewModels;
+using Analytik_Altfragengenerator.Databases;
 
 namespace Analytik_Altfragengenerator.ViewModels
 {
@@ -61,6 +62,17 @@ namespace Analytik_Altfragengenerator.ViewModels
             }
         }
 
+        private GravimetricTitrationQuestion _gravimetricTitrationQuestion;
+        public GravimetricTitrationQuestion GravimetricTitrationQuestion
+        {
+            get { return _gravimetricTitrationQuestion; }
+            set
+            {
+                _gravimetricTitrationQuestion = value;
+                this.OnPropertyChanged();
+            }
+        }
+
         private string _displayString;
         public string DisplayString
         {
@@ -84,6 +96,8 @@ namespace Analytik_Altfragengenerator.ViewModels
             StatisticsQuestion = new StatisticsQuestion();
             TitrationQuestion = new TitrationQuestion();
             DeviationQuestion = new DeviationQuestion();
+            GravimetricTitrationQuestion = new GravimetricTitrationQuestion();
+            Database Database = new Database();
             StatisticsQuestion.Initialize();
             Thread.Sleep(15);
             GenerateQuestion();
@@ -91,8 +105,8 @@ namespace Analytik_Altfragengenerator.ViewModels
 
         public void GenerateQuestion()
         {
-            //You'll either get a question about Titrations, or about statistics.
-            switch((Random.NextDouble() * 3).ToString()[0].ToString()) {
+            //This randomizes the order of questions
+            switch((Random.NextDouble() * 4).ToString()[0].ToString()) {
                 case "0":
                 TitrationQuestion.GenerateQuestion();
                 DisplayString = TitrationQuestion.QuestionContent;
@@ -108,9 +122,14 @@ namespace Analytik_Altfragengenerator.ViewModels
                     DisplayString = DeviationQuestion.QuestionContent;
                     SolutionMethodDelegate = DeviationQuestion.GetSolution;
                     break;
+                case "3":
+                    GravimetricTitrationQuestion.GenerateQuestion();
+                    DisplayString = GravimetricTitrationQuestion.QuestionContent;
+                    SolutionMethodDelegate = GravimetricTitrationQuestion.GetSolution;
+                    break;
                 default:
                     break;
-            } 
+            }
         }
         public void GetSolution() {
             MessageBox.Show(SolutionMethodDelegate());

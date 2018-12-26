@@ -27,7 +27,8 @@ namespace Analytik_Altfragengenerator.Models
             TotalVolume = GetRandomNumber(250, 1, 4, false);
             UsedSolution = GetRandomNumber(AliquotVolume, 3, 3, true);
 
-            QuestionContent = "Bei einer Säure-Base Titration wurden die folgenden Werte erzielt. Berechnen sie die Konzentration. Folgende Parameter wurden verwendet: \r\n" +
+            QuestionContent = "Bei einer Säure-Base Titration wurden die folgenden Werte erzielt. Berechnen sie die Konzentration der titrierten Lösung.\r\n" +
+                "Folgende Parameter wurden verwendet: \r\n" +
                 "Konzentration des Titers: " + ConcentrationTiter + " mit f=" + TiterFValue + "\r\n" + 
                 "Es wurde von einem Gesamtvolumen von " + TotalVolume + " ml ein Aliquot von " + AliquotVolume + " ml titriert. Verbrauch:: \r\n" + UsedSolution + " ml";
         }

@@ -29,12 +29,19 @@ namespace Analytik_Altfragengenerator.Models
 
         public string ShortenString(string _toShorten, int _desiredLength)
         {
-            string _tempString = "";
-            for(int i = 0; i < _desiredLength; i++)
+            try
             {
-                _tempString += _toShorten[i];
+                string _tempString = "";
+                for (int i = 0; i < _desiredLength; i++)
+                {
+                    _tempString += _toShorten[i];
+                }
+                return _tempString;
+            } catch
+            {
+                Console.WriteLine("Input string too short. Returning original string");
+                return _toShorten;
             }
-            return _tempString;
         }
     }
 }

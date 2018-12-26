@@ -54,7 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Databases\Database.cs" />
     <Compile Include="Models\DeviationQuestion.cs" />
+    <Compile Include="Models\GravimetricTitrationQuestion.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\StatisticsQuestion.cs" />
     <Compile Include="Models\TitrationQuestion.cs" />
