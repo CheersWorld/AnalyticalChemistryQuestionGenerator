@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Analytik_Altfragengenerator.Models;
@@ -84,6 +85,7 @@ namespace Analytik_Altfragengenerator.ViewModels
             TitrationQuestion = new TitrationQuestion();
             DeviationQuestion = new DeviationQuestion();
             StatisticsQuestion.Initialize();
+            Thread.Sleep(15);
             GenerateQuestion();
         }
 

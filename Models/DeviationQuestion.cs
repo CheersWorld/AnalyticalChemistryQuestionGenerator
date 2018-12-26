@@ -52,7 +52,7 @@ namespace Analytik_Altfragengenerator.Models
         }
         public string GetSolution()
         {
-            return "Aus Zeitgründen wird hier nur der F und T-Wert angezeigt, und nicht mit einer Tabelle ich verglichen.\r\n" +
+            return "Aus Zeitgründen wird hier nur der F und T-Wert angezeigt, und nicht mit einer Tabelle verglichen.\r\n" +
                 "F-Wert: " + GetFFactor() + "\r\n" +
                 "T-Wert: " + GetTFactor();
             
